@@ -93,5 +93,7 @@ Large Transformer → World state Reasoning
 - [10 Action Expert DiT](10-action-expert-dit.md) — 动作生成另一主线（扩散）
 - [13 BEV 深度](13-bev-depth-models.md) — Depth / 几何前置
 - [16 Qwen3-VL VLA](16-qwen3vl-vla-architecture.md) — 多模态条件进 VLA
-- 可能的 **18+**（手写前序）：若存在 Video/WM 或 4D 预训练笔记，应交叉链到本篇的 encoder 与 rollout 规格
+- [19 VL→4D 训练管线](19-hand-vl-4d-training-pipeline.md) — 4D Encoder 预训练与本篇前置
+- [22 Ego / Meta-Action / FM→DiT](22-hand-ego-process-meta-action.md) — action 条件与 teacher forcing
+- [24 Scene Graph / 流式 4D / WM](24-hand-scenegraph-streaming-4d.md) — WM rollout 与 Memory
 - 本系列后续：[26 Token/Occ](26-hand-token-arch-occ-sparse.md) · [28 档位与 DiT](28-hand-model-tiers-fm-dit.md) · [30 全栈](30-hand-fm-full-stack-architecture.md)

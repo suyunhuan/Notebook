@@ -122,4 +122,7 @@ Diffusion (~75M):
 - [03 OPD](03-online-policy-distillation.md) · [27 OPD/Toggle/STL](27-hand-opd-grpo-toggle-stl-cot.md) — MOPD/RL
 - [08 CoC](08-vla-ambiguity-coc.md) · [09 Reasoning](09-alpamayo-reasoning-vqa.md) — cot 数据形态
 - [25 LWM](25-hand-video-thinking-latent-wm.md) · [26 Token/Occ](26-hand-token-arch-occ-sparse.md) · [28 档位](28-hand-model-tiers-fm-dit.md) · [29 训练](29-hand-swift-megatron-train.md)
-- 可能的 **18+**：产品档位/传感器标定笔记应链到本篇输入分辨率表
+- [18 L3/L4 路线](18-hand-vla-l3l4-roadmap.md) — 系统目标
+- [19 VL→4D](19-hand-vl-4d-training-pipeline.md) — 训练阶段如何喂满本篇架构
+- [20–21 感知结构化 / 多传感器](20-hand-structured-perception.md) — 中间层与检测头细节（另见 [21](21-hand-multisensor-bev-pv.md)）
+- [22–24](22-hand-ego-process-meta-action.md) — Ego、数据、流式 4D 与本篇 Planner/Memory 衔接

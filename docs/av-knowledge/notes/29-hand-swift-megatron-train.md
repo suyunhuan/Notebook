@@ -101,4 +101,5 @@ env 初始化 → 加载模型 → Dataset · preprocess · DataLoader
 - [01 训练阶段](01-vlm-training-stages.md) — 何时 LoRA、何时全参
 - [03 OPD](03-online-policy-distillation.md) — 蒸馏阶段同样走 Swift/Megatron
 - [28 档位与 DiT](28-hand-model-tiers-fm-dit.md) — 1.8B+ 档位依赖本篇并行
-- 可能的 **18+**：集群拓扑 / 通讯库专项若存在，补本篇 COC 与 PP bubble 实测
+- [19 多阶段训练](19-hand-vl-4d-training-pipeline.md) — 阶段切换时用本篇框架训
+- [23 Agent Loop 基建](23-hand-data-sft-agent-loop.md) — 训练编排与 Runner

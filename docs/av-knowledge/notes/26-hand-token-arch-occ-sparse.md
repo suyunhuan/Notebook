@@ -121,4 +121,7 @@ Vehicle Kine → Ego tokenizer @ ~0.5M ─────────────�
 - [14 PV Backbone](14-pv-backbone-view-transform.md) — Backbone / View Transform
 - [25 Video Thinking / LWM](25-hand-video-thinking-latent-wm.md) — 4D/Ray 与 latent rollout
 - [30 全栈架构](30-hand-fm-full-stack-architecture.md) — 环视/前视/Lidar/Navi token 汇总
-- 可能的 **18+**：若有 DA3/鱼眼/ tokenizer 专项笔记，链到本篇 S0–S3 与 token 计数
+- [20 结构化感知 NaviNN](20-hand-structured-perception.md) — TBT/Navi 与本篇 Navi tokenizer
+- [21 多传感器 BEV/PV](21-hand-multisensor-bev-pv.md) — GOD/Sparse 头与本篇 BEV 多头
+- [23 数据/ViT 族/DA3](23-hand-data-sft-agent-loop.md) — DA3、FastViT、DAgger 数据侧
+- [24 流式 4D](24-hand-scenegraph-streaming-4d.md) — 长时序 token 与 KV

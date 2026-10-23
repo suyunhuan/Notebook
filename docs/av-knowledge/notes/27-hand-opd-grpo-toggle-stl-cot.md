@@ -112,4 +112,7 @@
 - [12 DPO/GRPO](12-planning-dpo-rl.md) — 规控偏好与在线 RL
 - [10 DiT Action](10-action-expert-dit.md) — 扩散动作头
 - [28 档位与 CrossAttn+DiT](28-hand-model-tiers-fm-dit.md) — GRPO 监控清单与轨迹头
-- 可能的 **18+**：若有 CoT 数据规范或 reward 设计笔记，与本篇 Toggle/STL 对齐
+- [18 VLA L3/L4 路线](18-hand-vla-l3l4-roadmap.md) — 闭环与因果对齐总纲
+- [22 Meta-Action](22-hand-ego-process-meta-action.md) — 推理–动作切分
+- [23 CoC Reward / Agent Loop](23-hand-data-sft-agent-loop.md) — CoT 质量 reward 与本篇 Toggle 互补
+- [24 Rollout→SFT→DPO](24-hand-scenegraph-streaming-4d.md) — 偏好对齐前序

@@ -107,4 +107,6 @@ Condition: lat+vision · point · time · ego
 - [27 OPD/Toggle/STL](27-hand-opd-grpo-toggle-stl-cot.md) — 后训练与 CoT
 - [29 Swift/Megatron](29-hand-swift-megatron-train.md) — 大档位怎么训
 - [30 全栈](30-hand-fm-full-stack-architecture.md) — 传感器→FM 总图
-- 可能的 **18+**：档位命名/产品线笔记若存在，以本篇规模表为技术锚点
+- [18 VLA 选型路线](18-hand-vla-l3l4-roadmap.md) — 产品档与 MOT 总纲
+- [22 FM→DiT / kvcache](22-hand-ego-process-meta-action.md) — 与本篇 AZx3+DiT 同链
+- [23 FastViT / ViT 族](23-hand-data-sft-agent-loop.md) — FastViT 选型细节
