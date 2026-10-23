@@ -34,7 +34,7 @@
 
 选型经验（笔记）：Swift 路径强调 **DDP/FSDP**；Megatron 路径上齐 **TP/PP/DP/EP/CP**。
 
-### 2. Swift：&lt;7B LoRA / 多模态上限
+### 2. Swift：小于 7B 的 LoRA / 多模态上限
 
 **LoRA（Low-Rank Adaptation）**：在冻结权重旁学低秩更新 \(\Delta W=BA\)，只训少量参数。
 
@@ -44,7 +44,7 @@
 - 精度：fp32 / **bf16** / fp16；损失以 **CE** 为主（另见 channel loss）。
 - 适合：指令跟随、多模态 SFT、快速实验；非万亿预训练。
 
-### 3. Megatron：&gt;7B–100B
+### 3. Megatron：大于 7B–100B
 
 必备旋钮：
 
@@ -80,7 +80,7 @@ env 初始化 → 加载模型 → Dataset · preprocess · DataLoader
 
 ### 5. 工程 Know-how
 
-- &lt;7B 先 LoRA 验证数据与模板，再决定是否全参或上 Megatron。
+- 小于 7B 先 LoRA 验证数据与模板，再决定是否全参或上 Megatron。
 - TP 增大通信；PP 增大 bubble——用 micro-batch 与 COC 填流水线。
 - 多模态 token 预算（image/video）必须与 `max length` 同账，否则截断静默伤规划 CoT。
 - 训推 **chat template / special token** 与 OPD 页（note 27）对齐。
