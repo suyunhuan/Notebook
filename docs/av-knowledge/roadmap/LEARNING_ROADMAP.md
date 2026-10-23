@@ -1,19 +1,21 @@
 # 自动驾驶大模型知识体系 · Roadmap
 
-目标：把 17 篇对话从「零散问答」变成可执行的学习与工程路线。  
+目标：把 **豆包对话 + 手写笔记** 从零散材料变成可执行学习与工程路线。  
 假设读者：有深度学习基础，正在做或计划做 **端到端 / VLA 智驾**。
+
+> 五层能力栈与「豆包×手写」合读分析见 **[INTEGRATED_SYSTEM.md](INTEGRATED_SYSTEM.md)**。
 
 ---
 
 ## 0. 你最终要建立的能力地图
 
-| 能力层 | 要能回答的问题 | 对应笔记 |
-|--------|----------------|----------|
-| L1 感知表征 | PV 怎么变 BEV？深度估计在哪用？ | 13, 14, 02 |
-| L2 多模态基座 | VLM 分几阶段接到车上？冻什么、解冻什么？ | 01, 09 |
-| L3 动作接口 | 轨迹是回归、码本还是扩散？条件怎么注入？ | 11, 10, 08 |
-| L4 因果与对齐 | 如何避免 shortcut？如何做偏好与蒸馏？ | 05, 07, 12, 03 |
-| L5 系统落地 | 用什么框架训、推、防遗忘？ | 15, 04, 06, 16, 17 |
+| 能力层 | 要能回答的问题 | 豆包 | 手写补强 |
+|--------|----------------|------|----------|
+| L1 感知表征 | PV→BEV？结构化导航/灯态怎么进规划？ | 13, 14, 02 | 20, 21, 26, 30 |
+| L2 多模态 / FM | 分几阶段训？流式 4D 与档位怎么扩？ | 01, 09, 16 | 19, 24, 28, 30 |
+| L3 动作接口 | 码本 / DiT / meta-action？KV 怎么条件化？ | 11, 10, 08 | 22, 25, 28 |
+| L4 因果与对齐 | shortcut？DPO？OPD？Toggle / STL？ | 05, 07, 12, 03 | 23, 24, 27 |
+| L5 系统落地 | Swift/Megatron？L3/L4 闭环要件？ | 15, 04, 06, 17 | 18, 29 |
 
 ---
 
@@ -21,19 +23,21 @@
 
 ### Phase 1 · 感知与表征基础（先把「看见」打牢）
 
-**产出**：能画出「多相机 → Backbone → View Transform → BEV → 检测/占用」框图，并说明 LSS 与 BEVFormer 差异。
+**产出**：能画出「多相机 → Backbone → View Transform → BEV → 检测/占用」框图，并说明 LSS 与 BEVFormer 差异；能解释 NaviNN 串级。
 
-1. [14 PV→BEV](../notes/14-pv-backbone-view-transform.md) — Backbone/Neck/View Transform
-2. [13 BEV 深度模型](../notes/13-bev-depth-models.md) — LSS 系 vs Query 系
-3. [02 BEV+PNC 栈](../notes/02-bev-pnc-stack.md) — 感知如何接到规控
+1. [14 PV→BEV](../notes/14-pv-backbone-view-transform.md)
+2. [13 BEV 深度模型](../notes/13-bev-depth-models.md)
+3. [21 多传感器 BEV/PV](../notes/21-hand-multisensor-bev-pv.md) · [20 结构化感知](../notes/20-hand-structured-perception.md)
+4. [26 Token/Occ](../notes/26-hand-token-arch-occ-sparse.md) · [02 BEV+PNC](../notes/02-bev-pnc-stack.md)
 
 **自检**
 
 - [ ] 能解释 Lift / Splat / depth distribution
 - [ ] 知道时序 BEV 为何要 ego-motion 补偿
-- [ ] 能说出量产常见选 CNN backbone 的原因
+- [ ] 能说出 NaviNN → TrafficNN → Ego-HMF 各自产出
+- [ ] 能区分 Occ Flow 与 Sparse BEV 的时序规格
 
-**扩展练习**：用开源 BEVDet 或 BEVFormer 跑通 nuScenes 检测 demo，改一版 depth supervision。
+**扩展练习**：开源 BEVDet/BEVFormer demo；或对照手写 30 画出四路 token 预算。
 
 ---
 
@@ -108,16 +112,16 @@
       ↓
 ③ 引入 meta-action / 结构化决策（消歧）
       ↓
-④ Action Expert：Flow Matching / DiT + ego 条件
+④ Action Expert：Flow Matching / DiT + ego / KV 条件
       ↓
-⑤ 数据加权 + 难例清洗闭环
+⑤ 数据加权 + 难例清洗 + Scene Graph 打标
       ↓
-⑥ 离线 DPO（同场景弱负）
+⑥ 离线 DPO（同场景弱负）± Toggle 控推理长度
       ↓
-⑦ OPD / replay 防遗忘 + 推理侧 guardrail
+⑦ OPD / replay 防遗忘 + STL/规则 guardrail
 ```
 
-对应笔记串联：`01 → 08 → 11/10 → 07 → 12 → 03/17 → 15`。
+对应笔记串联：`18/30 → 01 → 08 → 11/10/22 → 07/23 → 12/27 → 03/29`。
 
 ---
 
